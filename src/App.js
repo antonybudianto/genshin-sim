@@ -86,7 +86,14 @@ export default function App() {
           gacha 10x
         </button>
       </div>
-      <div>betaV0.1</div>
+      <div
+        style={{
+          fontSize: "8pt",
+          marginTop: "30px"
+        }}
+      >
+        GI Sim betaV0.1. &copy; Antony Budianto.
+      </div>
       <Modal
         isOpen={showModal}
         shouldCloseOnOverlayClick

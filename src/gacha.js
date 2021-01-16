@@ -78,9 +78,9 @@ const gacha = (n, charBanner = true) => {
     let label = isPityb4 && itemRarity === "b4" ? ` (pity)` : "";
     if (itemRarity === "b5") {
       label = ` (pity ${lastPityB5})`;
-      // if (isPityb5) {
-      //   label = ` (pity)`;
-      // }
+      if (isPityb5) {
+        label = ` (pity max 80)`;
+      }
     }
     result.push(itemRarity + " - " + item + label);
   }
