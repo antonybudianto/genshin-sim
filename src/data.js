@@ -60,17 +60,17 @@ const data = {
     ],
     b3: [
       "slingshot",
-      "ravenbow",
-      "thriling tales",
+      "raven bow",
+      "thriling tales of dragon slayers",
       "black tassel",
-      "bloodstained",
-      "skyrider",
+      "bloodstained greatsword",
+      "skyrider sword",
       "cool steel",
-      "sharpshooter",
-      "emerald",
+      "sharpshooter's oath",
+      "emerald orb",
       "magic guide",
       "debate club",
-      "ferrous",
+      "ferrous shadow",
       "harbinger of dawn"
     ]
   }
