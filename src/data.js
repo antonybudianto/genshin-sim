@@ -1,10 +1,79 @@
 import { difference } from "lodash";
 
+const b3 = [
+  "slingshot",
+  "raven bow",
+  "thriling tales of dragon slayers",
+  "black tassel",
+  "bloodstained greatsword",
+  "skyrider sword",
+  "cool steel",
+  "sharpshooter's oath",
+  "emerald orb",
+  "magic guide",
+  "debate club",
+  "ferrous shadow",
+  "harbinger of dawn"
+];
+
+const b4Char = [
+  "noelle",
+  "xingqiu",
+  "xiangling",
+  "xinyan",
+  "diona",
+  "razor",
+  "chongyun",
+  "ningguang",
+  "fischl",
+  "bennett",
+  "sucrose",
+  "beidou",
+  "barbara"
+];
+
+const b4Weapon = [
+  "rust",
+  "the stringless",
+  "eye of perception",
+  "the widsith",
+  "favonius lance",
+  "rainslasher",
+  "the bell",
+  "lion's roar",
+  "the flute",
+  "favonius sword",
+  "sacrificial sword",
+  "favonius greatsword",
+  "sacrificial greatsword",
+  "dragon's bane",
+  "favonius codex",
+  "sacrificial fragments",
+  "favonius warbow",
+  "sacrificial bow"
+];
+
+const b5Char = ["diluc", "mona", "keqing", "qiqi", "jean"];
+
+const b5Weapon = [
+  "skyward blade",
+  "skyward pride",
+  "skyward harp",
+  "skyward spine",
+  "skyward atlas",
+  "amos' bow",
+  "aquila favonia",
+  "primodial jade winged spear",
+  "lost prayer to the sacred wind",
+  "wolf gravestone"
+];
+
 const data = {
   gachaPrimo: 160,
   currency: "IDR",
   pityb4: 10,
-  pityb5: 80, //should be 90, but this is to simulate softpity lol
+  pityb5char: 80, //should be 90, but this is to simulate softpity lol
+  pityb5weapon: 70, //should be 80, but this is to simulate softpity lol
   primoPrice: [
     [8080, 1599000],
     [3880, 799000],
@@ -13,66 +82,33 @@ const data = {
     [330, 79000],
     [60, 16000]
   ],
-  getNonFeatB4() {
-    const pool = this.bannerCharPool;
+  getNonFeatB4(banner) {
+    const pool = this[banner + "Pool"];
     return difference(pool.b4, pool.ftb4);
   },
-  getNonFeatB5() {
-    const pool = this.bannerCharPool;
+  getNonFeatB5(banner) {
+    const pool = this[banner + "Pool"];
     return difference(pool.b5, pool.ftb5);
   },
-  bannerCharPool: {
+  charPool: {
     ftb5: ["ganyu"],
     ftb4: ["noelle", "xingqiu", "xiangling"],
-    b5: ["diluc", "mona", "keqing", "qiqi", "jean"],
-    b4: [
-      "noelle",
-      "xingqiu",
-      "xiangling",
-      "xinyan",
-      "diona",
-      "razor",
-      "chongyun",
-      "ningguang",
-      "fischl",
-      "bennett",
-      "sucrose",
-      "beidou",
-      "barbara",
-      "rust",
-      "the stringless",
-      "eye of perception",
-      "the widsith",
-      "favonius lance",
-      "rainslasher",
-      "the bell",
-      "lion's roar",
-      "the flute",
-      "favonius sword",
+    b5: [...b5Char],
+    b4: [...b4Char, ...b4Weapon],
+    b3: [...b3]
+  },
+  weaponPool: {
+    ftb5: ["amos' bow", "skyward pride"],
+    ftb4: [
       "sacrificial sword",
-      "favonius greatsword",
-      "sacrificial greatsword",
+      "the bell",
       "dragon's bane",
-      "favonius codex",
-      "sacrificial fragments",
-      "favonius warbow",
-      "sacrificial bow"
+      "eye of perception",
+      "favonius warbow"
     ],
-    b3: [
-      "slingshot",
-      "raven bow",
-      "thriling tales of dragon slayers",
-      "black tassel",
-      "bloodstained greatsword",
-      "skyrider sword",
-      "cool steel",
-      "sharpshooter's oath",
-      "emerald orb",
-      "magic guide",
-      "debate club",
-      "ferrous shadow",
-      "harbinger of dawn"
-    ]
+    b5: [...b5Weapon],
+    b4: [...b4Char, ...b4Weapon],
+    b3: [...b3]
   }
 };
 

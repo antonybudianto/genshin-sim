@@ -10,7 +10,13 @@ import ModalContent from "./ModalContent";
 
 Modal.setAppElement("#modal");
 
+const BANNER_IMG = {
+  char: "https://i.ibb.co/W53RJJ8/Screen-Shot-2021-01-17-at-00-16-06.png",
+  weapon: "https://i.ibb.co/WpGxk4D/Screen-Shot-2021-01-17-at-00-15-57.png"
+};
+
 export default function App() {
+  const [banner, setBanner] = useState("char");
   const [list, setList] = useState([]);
   const [bag, setBag] = useState([]);
   const [count, setCount] = useState(0);
@@ -23,7 +29,7 @@ export default function App() {
 
   const handleGacha = n => {
     setCount(count + n);
-    const result = gacha(n);
+    const result = gacha(n, banner);
     setList(result);
     setBag([...result, ...bag]);
   };
@@ -41,8 +47,22 @@ export default function App() {
     setShowModal(false);
   };
 
+  const handleBanner = e => {
+    handleClear();
+    setBanner(e.target.value);
+  };
+
   return (
-    <div style={{ width: "80%", margin: "auto" }}>
+    <div
+      style={{
+        width: "70%",
+        margin: "auto",
+        backgroundRepeat: "no-repeat",
+        backgroundSize: "50%",
+        backgroundPosition: "100% 40%",
+        backgroundImage: `url(${BANNER_IMG[banner]})`
+      }}
+    >
       <h1>Genshin Impact Gacha Sim</h1>
       <div style={{ marginBottom: "10px" }}>
         Count: {count} / B4: {totalB4} /{" "}
@@ -63,7 +83,7 @@ export default function App() {
         {primoToCurrency(totalPrimo).toLocaleString()}
       </div>
       <div />
-      <ul style={{ minHeight: "300px" }}>
+      <ul style={{ minHeight: "200px" }}>
         {list.map((l, i) => (
           <li className={`li-b${l[1]}`} key={i}>
             {l}
@@ -71,6 +91,10 @@ export default function App() {
         ))}
       </ul>
       <div style={{ textAlign: "right" }}>
+        <select className="select" onChange={handleBanner}>
+          <option value="char">Character Banner</option>
+          <option value="weapon">Weapon Banner</option>
+        </select>
         <button
           className="btn btn-gacha"
           type="button"
@@ -89,10 +113,12 @@ export default function App() {
       <div
         style={{
           fontSize: "8pt",
-          marginTop: "30px"
+          marginTop: "30px",
+          textAlign: "right",
+          color: "gray"
         }}
       >
-        GI Sim betaV0.1. &copy; Antony Budianto.
+        GI Sim betaV0.2. &copy; Antony Budianto.
       </div>
       <Modal
         isOpen={showModal}
