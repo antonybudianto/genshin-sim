@@ -1,0 +1,36 @@
+h1,
+p {
+  font-family: Lato;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.btn {
+  font-size: 10pt;
+  border: 0;
+  padding: 5px 10px;
+  margin-right: 5px;
+  background-color: lightgray;
+  border-radius: 2px;
+}
+
+.btn:hover {
+  transition: all 0.5s ease;
+  background-color: darkgray;
+}
+
+.btn-gacha {
+  font-size: 12pt;
+}
+
+.li-b5 {
+  color: orange;
+  font-weight: bold;
+}
+
+.li-b4 {
+  color: purple;
+  font-weight: bold;
+}
