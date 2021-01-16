@@ -83,7 +83,7 @@ export default function App() {
         {primoToCurrency(totalPrimo).toLocaleString()}
       </div>
       <div />
-      <ul style={{ minHeight: "200px" }}>
+      <ul style={{ minHeight: "200px", paddingLeft: "15px" }}>
         {list.map((l, i) => (
           <li className={`li-b${l[1]}`} key={i}>
             {l}
