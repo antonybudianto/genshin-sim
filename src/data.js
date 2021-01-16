@@ -72,8 +72,10 @@ const data = {
   gachaPrimo: 160,
   currency: "IDR",
   pityb4: 10,
-  pityb5char: 80, //should be 90, but this is to simulate softpity lol
-  pityb5weapon: 70, //should be 80, but this is to simulate softpity lol
+
+  // pityb5 is -10 since default said pity is never reach due to softpity
+  pityb5char: 80,
+  pityb5weapon: 70,
   primoPrice: [
     [8080, 1599000],
     [3880, 799000],
