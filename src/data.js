@@ -1,5 +1,11 @@
 import { difference } from "lodash";
 
+const rarityTextMap = {
+  b3: "⭑3",
+  b4: "⭑4",
+  b5: "⭐️5"
+};
+
 const b3 = [
   "slingshot",
   "raven bow",
@@ -69,6 +75,7 @@ const b5Weapon = [
 ];
 
 const data = {
+  rarityTextMap,
   gachaPrimo: 160,
   currency: "IDR",
   pityb4: 10,

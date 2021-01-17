@@ -4,7 +4,7 @@ import Modal from "react-modal";
 import "./style.css";
 import data from "./data";
 import gacha, { clear } from "./gacha";
-import { primoToCurrency } from "./util";
+import { primoToCurrency, toListText } from "./util";
 import ModalContent from "./ModalContent";
 // console.log(data);
 
@@ -32,6 +32,11 @@ export default function App() {
     const result = gacha(n, banner);
     setList(result);
     setBag([...result, ...bag]);
+
+    const listEl = document.querySelector(".gacha-list");
+    listEl.classList.remove("anim-slide");
+    void listEl.offsetWidth;
+    listEl.classList.add("anim-slide");
   };
 
   const handleClear = () => {
@@ -54,19 +59,15 @@ export default function App() {
 
   return (
     <div
+      className="main"
       style={{
-        width: "70%",
-        margin: "auto",
-        backgroundRepeat: "no-repeat",
-        backgroundSize: "50%",
-        backgroundPosition: "100% 40%",
         backgroundImage: `url(${BANNER_IMG[banner]})`
       }}
     >
       <h1>Genshin Impact Gacha Sim</h1>
-      <div style={{ marginBottom: "10px" }}>
-        Count: {count} / B4: {totalB4} /{" "}
-        <span title={listB5.join(",")}>B5: {totalB5}</span> /{" "}
+      <div className="gacha-panel1">
+        Count: {count} / 4 ⭐️: {totalB4} /{" "}
+        <span title={listB5.join(",")}>5 ⭐️: {totalB5}</span> /{" "}
         <button className="btn" type="button" onClick={handleClear}>
           clear
         </button>
@@ -79,11 +80,16 @@ export default function App() {
         </button>
       </div>
       <div style={{ marginBottom: "10px" }}>
-        Primos: {totalPrimo.toLocaleString()} / Price:{" IDR "}
+        Primogems: {totalPrimo.toLocaleString()} / Price:{" IDR "}
         {primoToCurrency(totalPrimo).toLocaleString()}
       </div>
       <div />
-      <ul style={{ minHeight: "200px", paddingLeft: "15px" }}>
+      <ul
+        className="gacha-list"
+        style={{
+          visibility: list.length ? "visible" : "hidden"
+        }}
+      >
         {list.map((l, i) => (
           <li className={`li-b${l[1]}`} key={i}>
             {l}

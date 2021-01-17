@@ -5,6 +5,16 @@ p {
 
 body {
   font-family: Arial, Helvetica, sans-serif;
+  height: 100vh;
+}
+
+.main {
+  width: 70%;
+  height: 100vh;
+  margin: auto;
+  background-repeat: no-repeat;
+  background-size: 50%;
+  background-position: 100% 40%;
 }
 
 .btn {
@@ -38,4 +48,45 @@ body {
 .li-b4 {
   color: mediumpurple;
   font-weight: bold;
+}
+
+.gacha-list {
+  width: 250px;
+  min-height: 255px;
+  padding: 5px 30px;
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 5px;
+}
+
+.gacha-list li {
+  margin: 5px 0px;
+}
+
+.anim-slide {
+  animation: slide 0.3s linear;
+}
+
+.gacha-panel1 {
+  margin-bottom: 10px;
+  color: gray;
+  font-weight: bold;
+}
+
+@media screen and (max-width: 800px) {
+  .main {
+    width: 98%;
+    background-size: 100%;
+    background-position: 0% 135px;
+  }
+}
+
+@keyframes slide {
+  0% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0%);
+    opacity: 1;
+  }
 }
