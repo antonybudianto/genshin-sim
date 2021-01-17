@@ -27,14 +27,18 @@ export const parseMeta = str => {
 };
 
 export const toListText = d => {
-  const isPityb4 = d.isPity && d.rarity === "b4";
-  const isPityb5 = d.isPity && d.rarity === "b5";
-  let label = isPityb4 && d.rarity === "b4" ? ` (pity)` : "";
-  if (d.rarity === "b5") {
-    label = ` (pity ${d.pityCount})`;
+  const { isPityb4, itemRarity, lastPityB5, isPityb5, item } = d;
+  console.log(d);
+  let label = isPityb4 && itemRarity === "b4" ? ` (pity)` : "";
+  if (itemRarity === "b5") {
+    label = ` (pity ${lastPityB5})`;
     if (isPityb5) {
-      label = ` (pity max)`;
+      label = ` (pity max 80)`;
     }
   }
-  return `${data.rarityTextMap[d.rarity]} ${d.name} - ${label}`;
+  const itemName = item
+    .split(" ")
+    .map(t => t[0].toUpperCase() + t.slice(1))
+    .join(" ");
+  return `${data.rarityTextMap[itemRarity]} - ${itemName + label}`;
 };

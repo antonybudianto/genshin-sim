@@ -22,8 +22,8 @@ export default function App() {
   const [count, setCount] = useState(0);
   const [showModal, setShowModal] = useState(false);
 
-  const listB4 = bag.filter(b => b[1] === "4");
-  const listB5 = bag.filter(b => b[1] === "5");
+  const listB4 = bag.filter(b => b.itemRarity === "b4");
+  const listB5 = bag.filter(b => b.itemRarity === "b5");
   const totalB4 = listB4.length;
   const totalB5 = listB5.length;
 
@@ -91,8 +91,8 @@ export default function App() {
         }}
       >
         {list.map((l, i) => (
-          <li className={`li-b${l[1]}`} key={i}>
-            {l}
+          <li className={`li-${l.itemRarity}`} key={i}>
+            {toListText(l)}
           </li>
         ))}
       </ul>

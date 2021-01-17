@@ -34,7 +34,7 @@ const gacha = (n, banner = "char") => {
       }
     }
 
-    // let lastPityB4 = pityb4;
+    let lastPityB4 = pityb4;
     let lastPityB5 = pityb5;
     const isPityb4 = pityb4 >= data.pityb4;
     const isPityb5 = pityb5 >= datapityb5;
@@ -79,18 +79,19 @@ const gacha = (n, banner = "char") => {
       }
     }
 
-    let label = isPityb4 && itemRarity === "b4" ? ` (pity)` : "";
-    if (itemRarity === "b5") {
-      label = ` (pity ${lastPityB5})`;
-      if (isPityb5) {
-        label = ` (pity max 80)`;
-      }
-    }
-    result.push(itemRarity + " - " + item + label);
+    const newData = {
+      itemRarity,
+      item,
+      isPityb4,
+      isPityb5,
+      lastPityB4,
+      lastPityB5
+    };
+    result.push(newData);
   }
 
   console.log("pityb5:", pityb5);
-  return result.sort((it1, it2) => it2[1] - it1[1]);
+  return result.sort((it1, it2) => it2.itemRarity[1] - it1.itemRarity[1]);
 };
 
 export default gacha;
