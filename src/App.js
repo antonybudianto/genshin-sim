@@ -11,8 +11,8 @@ import ModalContent from "./ModalContent";
 Modal.setAppElement("#modal");
 
 const BANNER_IMG = {
-  char: "https://i.ibb.co/W53RJJ8/Screen-Shot-2021-01-17-at-00-16-06.png",
-  weapon: "https://i.ibb.co/WpGxk4D/Screen-Shot-2021-01-17-at-00-15-57.png"
+  char: "https://i.ibb.co/PNC7X6m/Screen-Shot-2021-01-17-at-19-21-04.jpg",
+  weapon: "https://i.ibb.co/fNzq54N/Screen-Shot-2021-01-17-at-19-18-47.jpg"
 };
 
 // C6 max with worst-case scenario
