@@ -106,14 +106,14 @@ export default function App() {
           type="button"
           onClick={() => handleGacha(1)}
         >
-          gacha 1x
+          Wish x1
         </button>
         <button
           className="btn btn-gacha"
           type="button"
           onClick={() => handleGacha(10)}
         >
-          gacha 10x
+          Wish x10
         </button>
       </div>
       <div

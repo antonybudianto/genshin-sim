@@ -14,7 +14,7 @@ body {
   margin: auto;
   background-repeat: no-repeat;
   background-size: 50%;
-  background-position: 100% 40%;
+  background-position: 100% 30%;
 }
 
 .btn {
@@ -29,6 +29,8 @@ body {
 .select {
   padding: 5px 6px;
   margin-right: 5px;
+  border-radius: 10px;
+  outline: none;
 }
 
 .btn:hover {
@@ -38,6 +40,17 @@ body {
 
 .btn-gacha {
   font-size: 12pt;
+  background-color: white;
+  border: 1px solid olive;
+  color: olive;
+  border-radius: 30px;
+  padding: 5px 25px;
+  outline: none;
+}
+
+.btn-gacha:hover {
+  transition: all 0.5s ease;
+  background-color: antiquewhite;
 }
 
 .li-b5 {
@@ -52,7 +65,7 @@ body {
 
 .gacha-list {
   width: 350px;
-  min-height: 255px;
+  height: 255px;
   padding: 5px 20px;
   background-color: rgba(255, 255, 255, 0.9);
   border-radius: 5px;
@@ -60,7 +73,7 @@ body {
 }
 
 .gacha-list li {
-  margin: 5px 0px;
+  margin: 2px 0px;
 }
 
 .anim-slide {
@@ -83,8 +96,11 @@ body {
 
 @keyframes slide {
   0% {
-    transform: translateX(-100%);
+    transform: translateX(-20%);
     opacity: 0;
+  }
+  95% {
+    opacity: 0.5;
   }
   100% {
     transform: translateX(0%);

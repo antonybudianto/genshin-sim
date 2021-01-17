@@ -50,19 +50,21 @@ const ModalContent = ({ bag = [] }) => {
             );
           })}
       </ul>
-      <button type="button" className="btn" onClick={() => setPage(0)}>
-        {" "}
-        {"|< "} first{" "}
-      </button>
-      <button type="button" className="btn" onClick={handlePrev}>
-        prev {"<"}{" "}
-      </button>
-      <button type="button" className="btn" onClick={handleNext}>
-        next {">"}{" "}
-      </button>
-      <button type="button" className="btn" onClick={() => setPage(MAX_PAGE)}>
-        last {">|"}{" "}
-      </button>
+      <div>
+        <button type="button" className="btn" onClick={() => setPage(0)}>
+          {" "}
+          {"|< "} first{" "}
+        </button>
+        <button type="button" className="btn" onClick={handlePrev}>
+          prev {"<"}{" "}
+        </button>
+        <button type="button" className="btn" onClick={handleNext}>
+          next {">"}{" "}
+        </button>
+        <button type="button" className="btn" onClick={() => setPage(MAX_PAGE)}>
+          last {">|"}{" "}
+        </button>
+      </div>
     </div>
   );
 };
