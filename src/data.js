@@ -3,7 +3,7 @@ import { difference } from "lodash";
 const rarityTextMap = {
   b3: "⭑3",
   b4: "⭑4",
-  b5: "⭐️5"
+  b5: "⭑5"
 };
 
 const b3 = [

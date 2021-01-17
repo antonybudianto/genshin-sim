@@ -105,8 +105,8 @@ export default function App() {
     >
       <h1>Genshin Impact Gacha Sim</h1>
       <div className="gacha-panel1">
-        Count: {count} / 4 ⭐️: {totalB4} /{" "}
-        <span title={listB5.join(",")}>5 ⭐️: {totalB5}</span> /{" "}
+        Count: {count} / 4⭑: {totalB4} /{" "}
+        <span title={listB5.join(",")}>5⭑: {totalB5}</span> /{" "}
         <button className="btn" type="button" onClick={handleClear}>
           clear
         </button>
