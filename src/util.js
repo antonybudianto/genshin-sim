@@ -40,5 +40,5 @@ export const toListText = d => {
     .split(" ")
     .map(t => t[0].toUpperCase() + t.slice(1))
     .join(" ");
-  return `${data.rarityTextMap[itemRarity]} - ${itemName + label}`;
+  return `${data.rarityTextMap[itemRarity]} · ${itemName + label}`;
 };
