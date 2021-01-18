@@ -53,6 +53,10 @@ body {
   background-color: antiquewhite;
 }
 
+.li-b3 {
+  color: gray;
+}
+
 .li-b5 {
   color: orange;
   font-weight: bold;
@@ -73,7 +77,7 @@ body {
 }
 
 .gacha-list li {
-  margin: 2px 0px;
+  margin: 1px 0px;
 }
 
 .anim-slide {
