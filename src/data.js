@@ -100,14 +100,14 @@ const data = {
     return difference(pool.b5, pool.ftb5);
   },
   charPool: {
-    ftb5: ["ganyu"],
-    ftb4: ["noelle", "xingqiu", "xiangling"],
+    ftb5: ["xiao"],
+    ftb4: ["diona", "beidou", "xinyan"],
     b5: [...b5Char],
     b4: [...b4Char, ...b4Weapon],
     b3: [...b3]
   },
   weaponPool: {
-    ftb5: ["amos' bow", "skyward pride"],
+    ftb5: ["primodial jade winged-spear", "primodial jade cutter"],
     ftb4: [
       "sacrificial sword",
       "the bell",

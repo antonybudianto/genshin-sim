@@ -11,8 +11,10 @@ import ModalContent from "./ModalContent";
 Modal.setAppElement("#modal");
 
 const BANNER_IMG = {
-  char: "https://i.ibb.co/PNC7X6m/Screen-Shot-2021-01-17-at-19-21-04.jpg",
-  weapon: "https://i.ibb.co/fNzq54N/Screen-Shot-2021-01-17-at-19-18-47.jpg"
+  char:
+    "https://upload-os-bbs.hoyolab.com/upload/2021/02/01/1015537/5131252087ceb659c8e56a0086c16c0a_7466911379071286721.jpg?x-oss-process=image/resize,s_740/quality,q_80/auto-orient,0/interlace,1/format,jpg",
+  weapon:
+    "https://upload-os-bbs.hoyolab.com/upload/2021/02/01/1015537/20f782d1106c22dfc990cf021a027f71_7876678915179273888.jpg?x-oss-process=image/resize,s_740/quality,q_80/auto-orient,0/interlace,1/format,jpg"
 };
 
 // C6 max with worst-case scenario
