@@ -107,7 +107,7 @@ const data = {
     b3: [...b3]
   },
   weaponPool: {
-    ftb5: ["primodial jade winged-spear", "primodial jade cutter"],
+    ftb5: ["primodial jade winged spear", "primodial jade cutter"],
     ftb4: [
       "sacrificial sword",
       "the bell",
