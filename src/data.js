@@ -69,7 +69,7 @@ const b5Weapon = [
   "skyward atlas",
   "amos' bow",
   "aquila favonia",
-  "primodial jade winged spear",
+  "primordial jade winged spear",
   "lost prayer to the sacred wind",
   "wolf gravestone"
 ];
@@ -107,7 +107,7 @@ const data = {
     b3: [...b3]
   },
   weaponPool: {
-    ftb5: ["primodial jade winged spear", "primodial jade cutter"],
+    ftb5: ["primordial jade winged spear", "primordial jade cutter"],
     ftb4: [
       "rust",
       "favonius lance",
