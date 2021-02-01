@@ -109,11 +109,11 @@ const data = {
   weaponPool: {
     ftb5: ["primodial jade winged spear", "primodial jade cutter"],
     ftb4: [
-      "sacrificial sword",
-      "the bell",
-      "dragon's bane",
+      "rust",
+      "favonius lance",
+      "the flute",
       "eye of perception",
-      "favonius warbow"
+      "sacrificial greatsword"
     ],
     b5: [...b5Weapon],
     b4: [...b4Char, ...b4Weapon],
