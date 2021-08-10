@@ -1,6 +1,6 @@
-import React, { useState } from "react";
+import React, { useState } from 'react';
 
-import { toListText } from "./util";
+import { toListText } from './util';
 
 const ModalContent = ({ bag = [] }) => {
   const [page, setPage] = useState(0);
@@ -25,17 +25,17 @@ const ModalContent = ({ bag = [] }) => {
       <h3>
         Bag (page {page + 1} of {MAX_PAGE + 1})
       </h3>
-      <div>
+      <div className="mt-2">
         <button onClick={handleSort} type="button" className="btn">
-          sort by {sort ? "date" : "rarity"}
+          sort by {sort ? 'date' : 'rarity'}
         </button>
       </div>
       {bag.length === 0 ? (
-        <div style={{ margin: "20px 0px" }}>
+        <div style={{ margin: '20px 0px' }}>
           -- No gacha data, let's gacha! --
         </div>
       ) : null}
-      <ul className="gacha-list">
+      <ul className="gacha-list mt-2">
         {[...bag]
           .sort((a, b) => {
             if (!sort) return false;
@@ -50,19 +50,19 @@ const ModalContent = ({ bag = [] }) => {
             );
           })}
       </ul>
-      <div>
+      <div className="mt-2">
         <button type="button" className="btn" onClick={() => setPage(0)}>
-          {" "}
-          {"|< "} first{" "}
+          {' '}
+          {'|< '} first{' '}
         </button>
         <button type="button" className="btn" onClick={handlePrev}>
-          prev {"<"}{" "}
+          prev {'<'}{' '}
         </button>
         <button type="button" className="btn" onClick={handleNext}>
-          next {">"}{" "}
+          next {'>'}{' '}
         </button>
         <button type="button" className="btn" onClick={() => setPage(MAX_PAGE)}>
-          last {">|"}{" "}
+          last {'>|'}{' '}
         </button>
       </div>
     </div>

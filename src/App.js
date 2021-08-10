@@ -1,20 +1,17 @@
-import React, { useState, useCallback } from "react";
-import Modal from "react-modal";
+import React, { useState, useCallback } from 'react';
+import Modal from 'react-modal';
 
-import "./style.css";
-import data from "./data";
-import gacha, { clear } from "./gacha";
-import { primoToCurrency, toListText } from "./util";
-import ModalContent from "./ModalContent";
-// console.log(data);
+import './style.css';
+import data from './data';
+import gacha, { clear } from './gacha';
+import { primoToCurrency, toListText } from './util';
+import ModalContent from './ModalContent';
 
-Modal.setAppElement("#modal");
+Modal.setAppElement('#modal');
 
 const BANNER_IMG = {
-  char:
-    "https://upload-os-bbs.hoyolab.com/upload/2021/02/01/1015537/5131252087ceb659c8e56a0086c16c0a_7466911379071286721.jpg?x-oss-process=image/resize,s_740/quality,q_80/auto-orient,0/interlace,1/format,jpg",
-  weapon:
-    "https://upload-os-bbs.hoyolab.com/upload/2021/02/01/1015537/20f782d1106c22dfc990cf021a027f71_7876678915179273888.jpg?x-oss-process=image/resize,s_740/quality,q_80/auto-orient,0/interlace,1/format,jpg"
+  char: 'https://pbs.twimg.com/media/E8PVnShVEAExgCd?format=jpg&name=medium',
+  weapon: 'https://pbs.twimg.com/media/E8PWY4oVoAEJw-m?format=jpg&name=medium'
 };
 
 // C6 max with worst-case scenario
@@ -23,14 +20,14 @@ const BANNER_IMG = {
 const MAX_GACHA_RETRY = 8 * (6 * 2);
 
 export default function App() {
-  const [banner, setBanner] = useState("char");
+  const [banner, setBanner] = useState('char');
   const [list, setList] = useState([]);
   const [bag, setBag] = useState([]);
   const [count, setCount] = useState(0);
   const [showModal, setShowModal] = useState(false);
 
-  const listB4 = bag.filter(b => b.itemRarity === "b4");
-  const listB5 = bag.filter(b => b.itemRarity === "b5");
+  const listB4 = bag.filter(b => b.itemRarity === 'b4');
+  const listB5 = bag.filter(b => b.itemRarity === 'b5');
   const totalB4 = listB4.length;
   const totalB5 = listB5.length;
 
@@ -40,10 +37,10 @@ export default function App() {
     setBag(curBag => [...result, ...curBag]);
     setList(result);
 
-    const listEl = document.querySelector(".gacha-list");
-    listEl.classList.remove("anim-slide");
+    const listEl = document.querySelector('.gacha-list');
+    listEl.classList.remove('anim-slide');
     void listEl.offsetWidth;
-    listEl.classList.add("anim-slide");
+    listEl.classList.add('anim-slide');
 
     return result;
   };
@@ -68,8 +65,8 @@ export default function App() {
 
   const handleCons = async () => {
     handleClear();
-    let targetConste = data[banner + "Pool"].ftb5[0];
-    let cons = window.prompt("Input constellation count (1-6, default 6)");
+    let targetConste = data[banner + 'Pool'].ftb5[0];
+    let cons = window.prompt('Input constellation count (1-6, default 6)');
 
     if (cons === null) {
       return;
@@ -100,35 +97,52 @@ export default function App() {
 
   return (
     <div
-      className="main"
+      className="main container mx-auto px-2 py-5"
       style={{
         backgroundImage: `url(${BANNER_IMG[banner]})`
       }}
     >
-      <h1>Genshin Impact Gacha Sim</h1>
-      <div className="gacha-panel1">
-        Count: {count} / 4⭑: {totalB4} /{" "}
-        <span title={listB5.join(",")}>5⭑: {totalB5}</span> /{" "}
-        <button className="btn" type="button" onClick={handleClear}>
+      <h1 className="font-extrabold text-2xl text-red-400">
+        Genshin Impact Gacha Sim
+      </h1>
+      <div className="gacha-panel1 flex items-center mt-5">
+        <div className="mr-3">
+          Count: {count} / 4⭑: {totalB4} /{' '}
+          <span title={listB5.join(',')}>5⭑: {totalB5}</span> /{' '}
+        </div>
+        <button
+          className="bg-red-50 hover:bg-red-100 text-gray-500 px-3 py-2 mr-1 rounded"
+          type="button"
+          onClick={handleClear}
+        >
           clear
         </button>
         <button
-          className="btn"
+          className="bg-red-50 hover:bg-red-100 text-gray-500 px-3 py-2 mr-1 rounded"
           type="button"
           onClick={() => setShowModal(true)}
         >
           open bag
         </button>
       </div>
-      <div style={{ marginBottom: "10px" }}>
-        Primogems: {totalPrimo.toLocaleString()} / Price:{" IDR "}
-        {primoToCurrency(totalPrimo).toLocaleString()}
+      <div className="flex w-5/12 mb-5 bg-white bg-opacity-50 text-gray-500 items-center">
+        <div className="flex items-center">
+          <img
+            src="https://ih1.redbubble.net/image.1816083712.5142/st,small,507x507-pad,600x600,f8f8f8.jpg"
+            width="30"
+            height="30"
+          />{' '}
+          {totalPrimo.toLocaleString()}
+        </div>
+        <div className="ml-1">
+          / {'Rp '}
+          {primoToCurrency(totalPrimo).toLocaleString()}
+        </div>
       </div>
-      <div />
       <ul
-        className="gacha-list"
+        className="gacha-list bg-white bg-opacity-90 shadow"
         style={{
-          visibility: list.length ? "visible" : "hidden"
+          visibility: list.length ? 'visible' : 'hidden'
         }}
       >
         {list.map((l, i) => (
@@ -137,25 +151,29 @@ export default function App() {
           </li>
         ))}
       </ul>
-      <div style={{ textAlign: "right" }}>
-        <select className="select" onChange={handleBanner}>
+      <div className="mt-2 flex justify-end">
+        <select className="select border shadow" onChange={handleBanner}>
           <option value="char">Character Banner</option>
           <option value="weapon">Weapon Banner</option>
         </select>
-        {banner === "char" ? (
-          <button className="btn btn-gacha" type="button" onClick={handleCons2}>
+        {banner === 'char' ? (
+          <button
+            className="btn btn-gacha shadow"
+            type="button"
+            onClick={handleCons2}
+          >
             Const. Wish
           </button>
         ) : null}
         <button
-          className="btn btn-gacha"
+          className="btn btn-gacha shadow"
           type="button"
           onClick={() => handleGacha(1)}
         >
           Wish x1
         </button>
         <button
-          className="btn btn-gacha"
+          className="btn btn-gacha shadow"
           type="button"
           onClick={() => handleGacha(10)}
         >
@@ -164,19 +182,20 @@ export default function App() {
       </div>
       <div
         style={{
-          fontSize: "8pt",
-          marginTop: "30px",
-          textAlign: "right",
-          color: "gray"
+          fontSize: '8pt',
+          marginTop: '30px',
+          textAlign: 'right',
+          color: 'gray'
         }}
       >
-        GI Sim betaV0.2. &copy; Antony Budianto.
+        GI Sim v2.0 &copy; Antony Budianto.
       </div>
       <Modal
         isOpen={showModal}
         shouldCloseOnOverlayClick
         onRequestClose={closeModal}
         contentLabel="Gacha Bag"
+        className="w-10/12 sm:w-6/12 m-auto mt-5 lg:mt-20 px-5 py-5 shadow bg-white"
       >
         <ModalContent bag={bag} />
       </Modal>

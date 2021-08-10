@@ -69,9 +69,8 @@ body {
 
 .gacha-list {
   display: inline-block;
-  height: 255px;
+  min-height: 255px;
   padding: 5px 20px;
-  background-color: rgba(255, 255, 255, 0.9);
   border-radius: 5px;
   list-style-type: none;
 }
@@ -101,6 +100,16 @@ body {
   }
   .gacha-panel1 {
     font-size: 11pt;
+  }
+
+  .btn-gacha {
+    font-size: 12pt;
+    background-color: white;
+    border: 1px solid olive;
+    color: olive;
+    border-radius: 30px;
+    padding: 2px 10px;
+    outline: none;
   }
 }
 
