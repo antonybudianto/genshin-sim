@@ -22,7 +22,7 @@ const ModalContent = ({ bag = [] }) => {
 
   return (
     <div>
-      <h3>
+      <h3 className="text-xl font-bold text-red-400">
         Bag (page {page + 1} of {MAX_PAGE + 1})
       </h3>
       <div className="mt-2">
