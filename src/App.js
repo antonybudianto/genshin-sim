@@ -10,8 +10,8 @@ import ModalContent from './ModalContent';
 Modal.setAppElement('#modal');
 
 const BANNER_IMG = {
-  char: 'https://pbs.twimg.com/media/E8PVnShVEAExgCd?format=jpg&name=medium',
-  weapon: 'https://pbs.twimg.com/media/E8PWY4oVoAEJw-m?format=jpg&name=medium'
+  char: 'https://pbs.twimg.com/media/E_jpQ8qVQAAaVe_?format=jpg&name=medium',
+  weapon: 'https://pbs.twimg.com/media/E_jpdZLVUAUCjrO?format=jpg&name=medium',
 };
 
 // C6 max with worst-case scenario
@@ -26,15 +26,15 @@ export default function App() {
   const [count, setCount] = useState(0);
   const [showModal, setShowModal] = useState(false);
 
-  const listB4 = bag.filter(b => b.itemRarity === 'b4');
-  const listB5 = bag.filter(b => b.itemRarity === 'b5');
+  const listB4 = bag.filter((b) => b.itemRarity === 'b4');
+  const listB5 = bag.filter((b) => b.itemRarity === 'b5');
   const totalB4 = listB4.length;
   const totalB5 = listB5.length;
 
-  const handleGacha = n => {
+  const handleGacha = (n) => {
     const result = gacha(n, banner);
-    setCount(curCount => curCount + n);
-    setBag(curBag => [...result, ...curBag]);
+    setCount((curCount) => curCount + n);
+    setBag((curBag) => [...result, ...curBag]);
     setList(result);
 
     const listEl = document.querySelector('.gacha-list');
@@ -58,7 +58,7 @@ export default function App() {
     setShowModal(false);
   };
 
-  const handleBanner = e => {
+  const handleBanner = (e) => {
     handleClear();
     setBanner(e.target.value);
   };
@@ -85,7 +85,7 @@ export default function App() {
       if (consteCount >= cons) {
         break;
       }
-      await new Promise(res => {
+      await new Promise((res) => {
         setTimeout(() => {
           res();
         }, 20);
@@ -99,7 +99,7 @@ export default function App() {
     <div
       className="main container mx-auto px-2 py-5"
       style={{
-        backgroundImage: `url(${BANNER_IMG[banner]})`
+        backgroundImage: `url(${BANNER_IMG[banner]})`,
       }}
     >
       <h1 className="font-extrabold text-2xl text-red-400">
@@ -142,7 +142,7 @@ export default function App() {
       <ul
         className="gacha-list bg-white bg-opacity-90 shadow"
         style={{
-          visibility: list.length ? 'visible' : 'hidden'
+          visibility: list.length ? 'visible' : 'hidden',
         }}
       >
         {list.map((l, i) => (
@@ -185,7 +185,7 @@ export default function App() {
           fontSize: '8pt',
           marginTop: '30px',
           textAlign: 'right',
-          color: 'gray'
+          color: 'gray',
         }}
       >
         GI Sim v2.0 &copy; Antony Budianto.

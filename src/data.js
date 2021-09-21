@@ -3,7 +3,7 @@ import { difference } from 'lodash';
 const rarityTextMap = {
   b3: '⭑3',
   b4: '⭑4',
-  b5: '⭑5'
+  b5: '⭑5',
 };
 
 const b3 = [
@@ -19,7 +19,7 @@ const b3 = [
   'magic guide',
   'debate club',
   'ferrous shadow',
-  'harbinger of dawn'
+  'harbinger of dawn',
 ];
 
 const b4Char = [
@@ -35,7 +35,9 @@ const b4Char = [
   'bennett',
   'sucrose',
   'beidou',
-  'barbara'
+  'barbara',
+  'sayu',
+  'kujou sara',
 ];
 
 const b4Weapon = [
@@ -56,7 +58,7 @@ const b4Weapon = [
   'favonius codex',
   'sacrificial fragments',
   'favonius warbow',
-  'sacrificial bow'
+  'sacrificial bow',
 ];
 
 const b5Char = ['diluc', 'mona', 'keqing', 'qiqi', 'jean'];
@@ -71,7 +73,7 @@ const b5Weapon = [
   'aquila favonia',
   'primordial jade winged spear',
   'lost prayer to the sacred wind',
-  'wolf gravestone'
+  'wolf gravestone',
 ];
 
 const data = {
@@ -89,7 +91,7 @@ const data = {
     [2240, 479000],
     [1090, 249000],
     [330, 79000],
-    [60, 16000]
+    [60, 16000],
   ],
   getNonFeatB4(banner) {
     const pool = this[banner + 'Pool'];
@@ -100,25 +102,25 @@ const data = {
     return difference(pool.b5, pool.ftb5);
   },
   charPool: {
-    ftb5: ['yoimiya'],
-    ftb4: ['diona', 'sayu', 'xinyan'],
+    ftb5: ['kokomi'],
+    ftb4: ['xingqiu', 'rosaria', 'beidou'],
     b5: [...b5Char],
     b4: [...b4Char, ...b4Weapon],
-    b3: [...b3]
+    b3: [...b3],
   },
   weaponPool: {
-    ftb5: ['thundering pulse', 'skyward blade'],
+    ftb5: ['primordial jade cutter', 'everlasting moonglow'],
     ftb4: [
+      'stringless',
+      'favonius codex',
+      'the flute',
       "dragon's bane",
-      'favonius bow',
-      'sacrificial sword',
-      'eye of perception',
-      'sacrificial greatsword'
+      'favonius greatsword',
     ],
     b5: [...b5Weapon],
     b4: [...b4Char, ...b4Weapon],
-    b3: [...b3]
-  }
+    b3: [...b3],
+  },
 };
 
 export default data;
