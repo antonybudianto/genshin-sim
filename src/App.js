@@ -102,7 +102,7 @@ export default function App() {
         backgroundImage: `url(${BANNER_IMG[banner]})`,
       }}
     >
-      <h1 className="font-extrabold text-2xl text-red-400">
+      <h1 className="font-extrabold text-2xl text-blue-400">
         Genshin Impact Gacha Sim
       </h1>
       <div className="gacha-panel1 flex items-center mt-5">
@@ -111,14 +111,14 @@ export default function App() {
           <span title={listB5.join(',')}>5⭑: {totalB5}</span> /{' '}
         </div>
         <button
-          className="bg-red-50 hover:bg-red-100 text-gray-500 px-3 py-2 mr-1 rounded"
+          className="bg-blue-50 hover:bg-blue-100 text-gray-500 px-3 py-2 mr-1 rounded"
           type="button"
           onClick={handleClear}
         >
           clear
         </button>
         <button
-          className="bg-red-50 hover:bg-red-100 text-gray-500 px-3 py-2 mr-1 rounded"
+          className="bg-blue-50 hover:bg-blue-100 text-gray-500 px-3 py-2 mr-1 rounded"
           type="button"
           onClick={() => setShowModal(true)}
         >
